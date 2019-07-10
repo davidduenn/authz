@@ -24,8 +24,8 @@ class type_node{
 class user_node{
   public:
     user_node(int id, string name);
-    int add_type_node(string type);
-    int add_perm_node(string type, string perm);
+    void add_type_node(string type);
+    void add_perm_node(string type, string perm);
   private:
     int id;
     string name;
@@ -46,12 +46,12 @@ user_node::user_node(int id, string name){
   this->name = name;
 }
 
-int user_node::add_type_node(string type){
+void user_node::add_type_node(string type){
   this->types = new type_node;
   this->types->type = type;
 }
 
-int user_node::add_perm_node(string type, string perm){
+void user_node::add_perm_node(string type, string perm){
   // need to search for and use only this type
   this->types->perms = new perm_node;
   this->types->perms->perm = perm;
